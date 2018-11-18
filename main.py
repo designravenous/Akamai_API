@@ -24,7 +24,7 @@ input_file.close()
 
 current_date = datetime.datetime.now()
 
-#get credentials from Class:
+#get credentials from Config.py:
 to_akamai = config.Akamai_credentials(current_date)
 s = to_akamai.Akamai_report()
 
@@ -37,4 +37,6 @@ time_list = [csv_filename, start_date, end_date]
 api_call = app.Api_connector(s[0], time_list, domains, s[1])
 #Calling method creating Report:
 api_call.Akamai_init_report()
+
+
 
