@@ -1,6 +1,6 @@
 # Akamai_OPEN_API
 
-Application written in Python 3.7 
+Application written in Python 3.7, for information about Akamai API: https://developer.akamai.com/
 
 Dependencies:
 - requests
