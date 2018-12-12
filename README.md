@@ -9,5 +9,5 @@ Dependencies:
 - from urllib.parse import urljoin
 - datetime
 - sys
-
+- flask, json (pip install flask) (from flask import json)
 
