@@ -2,7 +2,7 @@ import config
 import app
 import datetime
 
-zones = ['pleat.com', 'hm.com', 'afound.com']
+zones = ['example1.com', 'example2.com', 'example3.com']
 date = datetime.datetime.now()
 todays_date = str(date.today)
 
