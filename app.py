@@ -1,5 +1,6 @@
 import csv
 from urllib.parse import urljoin
+from flask import json
 
 
 class Api_connector:
@@ -35,3 +36,22 @@ class Api_connector:
                 except:
                     to_csv_file.writerow([domain,'N/A','N/A',self.time_list[1],self.time_list[2]])
                     print(domain,',', 'N/A,','N/A,', self.time_list[1], self.time_list[2])
+                    
+class zone_info_class:
+    def __init__(self, autorizathion, zones, baseurl):
+        self.autorizathion = autorizathion
+        self.zones = zones
+        self.baseurl = baseurl
+
+    def get_zone_info(self):
+        for zone in self.zones:
+            try:
+                result = self.autorizathion.get(urljoin(self.baseurl, '/config-dns/v1/zones/' + zone))
+                stringar = result.text
+
+                document = json.loads(stringar)
+                print('\n', document['zone']['name'], '\n')
+                for item in document['zone']['ns']:
+                    print(item['target'])
+            except:
+                print('error')
