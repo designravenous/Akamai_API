@@ -2,12 +2,9 @@
 
 Application written in Python 3, for information about Akamai API: https://developer.akamai.com/
 
-Dependencies:
-- requests
-- csv
-- from akamai.edgedrid import EdgeGridAuth (pip install edgegrid-python)
-- from urllib.parse import urljoin
-- datetime
-- sys
-- flask, json (pip install flask) (from flask import json)
+Get API keys / Information from AKAMAI.
+
+insert credentials in the config file. Install all requirements from the requirements.txt.
+
+With this applications you will be able to get reports on Domain hits/NX Domain hits etc. With the zone_info_report.py you will be able to get zone information.
 
