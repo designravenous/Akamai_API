@@ -2,9 +2,20 @@ import config
 import app
 import datetime
 
-zones = ['example1.com', 'example2.com', 'example3.com']
+
 date = datetime.datetime.now()
 todays_date = str(date.today)
+
+file_argument = 'DNS_zoner.txt'
+
+with open(file_argument, 'r') as input_file:
+    domains = input_file.readlines()
+input_file.close()
+zones = []
+for item in domains:
+    new_dom = str(item.strip('\n'))
+    zones.append(new_dom)
+    
 
 #getting credentials
 credentials = config.Akamai_credentials(todays_date)
